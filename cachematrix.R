@@ -12,7 +12,7 @@
 ## `cachesolve` should retrieve the inverse from the cache.
 
 ## Creastes a special "matrix" object that can cache its inverse.
-
+## This function returns an object with defined functions
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y) {
@@ -32,7 +32,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## Computes the inverse of the special "matrix" returned by "makeCacheMatrix",
 ## (re-)calculating it if necessary (i.e. if the inverse has not been calculated
 ## or if the matrix has changed since last calculated)
-
+## This function uses the functions in the object 'x' to get and set persistent data
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   m <- x$getinverse()
